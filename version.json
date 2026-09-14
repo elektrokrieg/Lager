@@ -1,0 +1,6 @@
+{
+  "version": "1.0.0",
+  "cacheName": "lager-cache-v1",
+  "date": "2026-09-11",
+  "notes": "Erste Version: Lagerbestand mit Filter, Mindestbestand-Hinweis, Auftraege mit PDF/Text-Import und Vollstaendig-Benachrichtigung, Rollen (Buero/Monteur/Admin)."
+}

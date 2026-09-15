@@ -95,6 +95,11 @@ export async function signUp(email, password, displayName) {
   if (displayName) {
     await updateProfile(cred.user, { displayName });
   }
+  // Legt das zugehoerige Firestore-Profil an (Cloud Function "registerUser" -
+  // siehe functions/index.js). Der Nutzer ist zu diesem Zeitpunkt bereits
+  // angemeldet, sein ID-Token ist also gueltig. Ohne dies bliebe der
+  // Account ohne users/{uid}-Dokument und damit ohne jede Berechtigung.
+  await httpsCallable(functions, 'registerUser')();
 }
 
 export async function signOutUser() {
